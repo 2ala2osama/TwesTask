@@ -4,8 +4,7 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-
-  { path: 'home', component: HomeComponent },
+  { path: "", component: HomeComponent,pathMatch: "full" },
   { path: 'courses', component: CoursesComponent }
 ];
 

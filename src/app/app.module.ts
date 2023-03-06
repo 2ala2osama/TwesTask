@@ -9,7 +9,8 @@ import { MatTabsModule } from '@angular/material/tabs'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './components/home/home.component';
 import { CoursesComponent } from './components/courses/courses.component';
-
+import { MatDividerModule } from '@angular/material/divider';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,10 @@ import { CoursesComponent } from './components/courses/courses.component';
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatTabsModule,
-    NgbModule
+    NgbModule,
+    MatDividerModule,
+    FlexLayoutModule
+
 
   ],
   providers: [],

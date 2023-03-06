@@ -1,5 +1,6 @@
 .app-container {
     width: 100vw;
+    min-height: 50vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -9,7 +10,6 @@
     @media (max-width: 1024px) {
         display: block;
         text-align: center;
-
     }
 
     &-img {
@@ -17,7 +17,6 @@
 
         @media (max-width: 1024px) {
             width: 100%;
-
         }
 
         .image-container {
@@ -25,7 +24,6 @@
                 width: 100%;
                 height: 100%;
             }
-
         }
     }
 
@@ -35,7 +33,6 @@
 
         @media (max-width: 1024px) {
             width: 100%;
-
         }
 
         &-header {
@@ -43,12 +40,16 @@
 
             .header-title {
                 font-size: 45px;
+                white-space: nowrap;
+
+                @media(max-width: 1150px) {
+                    font-size: 40px;
+                }
 
                 @media (max-width: 520px) {
                     font-size: 20px;
                     line-height: 1rem;
                 }
-
 
             }
 
@@ -56,13 +57,12 @@
                 font-size: 60px;
                 letter-spacing: 3px;
                 font-weight: bolder;
-                line-height: 5rem;
+                line-height: 3.6rem;
 
                 @media (max-width: 520px) {
                     font-size: 20px;
                     line-height: 1rem;
                 }
-
             }
 
             .text-knowledge {
@@ -70,7 +70,6 @@
                 margin-top: 4rem;
                 line-height: 1.5rem;
                 letter-spacing: 1px;
-
             }
         }
 
@@ -86,75 +85,71 @@
         }
 
     }
+}
 
-    .footer-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: end;
-        align-items: end;
+:host ::ng-deep {
 
-        .footer-image {
-            width: 210px;
-            height: 100px;
-            position: fixed;
-            top: 34rem;
-            z-index: -2;
+    
 
-            @media (max-width: 1075px) {
-                top: 28rem;
+    .app-footer {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+
+        &-container {
+
+
+            &--image {
+                width: 210px;
+                height: 100px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
             }
 
-            img {
-                width: 100%;
-                height: 100%;
-
-            }
-        }
-
-        @media (max-width: 1024px) {
-            visibility: hidden;
-        }
-
-        .circle-container {
-            overflow: hidden;
-            position: fixed;
-            height: 150px;
-            z-index: -3;
-            padding: 0;
-            border-radius: 287% 14% 0 12px;
-            right: 0;
-            margin: 0;
-            bottom: 0;
-
-            .circle {
-                border: none;
-                width: 305px;
-                height: 150px;
-                background-color: rgba(174, 183, 202, .8);
+            &--circle-container {
+                overflow: hidden;
+                position: fixed;
+                height: 300px;
+                width: 300px;
                 z-index: -3;
+                padding: 0;
+                border-radius: 50%;
+                right: -65px;
+                margin: 0;
+                bottom: -150px;
+
+                .circle {
+                    position: unset;
+                    border: none;
+                    width: 300px;
+                    height: 300px;
+                    background-color: rgba(174, 183, 202, .8);
+                    z-index: -3;
+                }
             }
-        }
 
-        .circle2 {
-            border: none;
-            border-radius: 50%;
-            width: 110px;
-            z-index: 1rem;
-            height: 110px;
-            background-color: rgb(174, 183, 202);
-            z-index: -4;
-            position: fixed;
-            bottom: 2rem;
-            right: 11rem;
-            opacity: .8;
-
-
+            .circle2 {
+                border: none;
+                border-radius: 50%;
+                width: 110px;
+                z-index: 1rem;
+                height: 110px;
+                background-color: rgba(174, 183, 202, .8);
+                z-index: -4;
+                position: fixed;
+                bottom: 2%;
+                right: 11rem;
+                @media (max-width: 1024px) {
+                    visibility: hidden;
+                }
+            }
 
             @media (max-width: 1024px) {
-                visibility: hidden;
+                display: none !important;
             }
-
-
         }
     }
 }
